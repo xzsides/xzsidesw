@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neovim — Wiki</title>
+<meta name="description" content="Neovim editörünün tarihçesi, özellikleri ve yapılandırması üzerine wiki maddesi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/wiki.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
+<header class="site-header">
+  <div class="wrap header-row">
+    <label for="nav-toggle" class="hamburger" aria-label="Menüyü aç/kapat">&#9776;</label>
+    <a href="index.html" class="wordmark">
+      <span class="mark">&gt;_</span>
+      <span class="word">Wiki</span>
+    </a>
+    <ul class="tabs">
+      <li><a href="#top" class="active">Madde</a></li>
+      <li><a href="about.html">Tartışma</a></li>
+    </ul>
+    <div class="header-right">
+      <form class="search-form" role="search" action="search.html" method="get">
+        <input type="search" name="q" list="wiki-pages" placeholder="Wiki'de ara" autocomplete="off">
+        <datalist id="wiki-pages">
+<option value="Ana Sayfa">
+<option value="Unix kabuğu">
+<option value="Bash">
+<option value="Zsh">
+<option value="Starship">
+<option value="Neovim">
+<option value="tmux">
+<option value="Şablonlar">
+<option value="XZ Sides Wiki hakkında">
+<option value="İletişim">
+</datalist>
+        <button type="submit" aria-label="Ara">&#128269;</button>
+      </form>
+      <a class="account" href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">
+        <span class="gh-mark">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+          0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
+          1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+          0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68
+          0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+          0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01
+          8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </span>
+        <span class="account-text">
+          <span class="a-label">Kaynak kod</span>
+          <span class="a-name">xzsides/xzsidesw</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap page">
+  
+    <nav class="docs-nav">
+      <label for="nav-toggle" class="drawer-close" aria-label="Menüyü kapat">&times;</label>
+      <a href="index.html" class="home-link">&#8962; Ana Sayfa</a>
+      
+        <div class="nav-group">
+          <p class="nav-group-title">Genel</p>
+          <ul><li><a href="kabuk.html" class="">Unix kabuğu</a></li></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Kabuklar</p>
+          <ul><li><a href="bash.html" class="">Bash</a></li><li><a href="zsh.html" class="">Zsh</a></li></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Araçlar</p>
+          <ul><li><a href="starship.html" class="">Starship</a></li><li><a href="neovim.html" class="active">Neovim</a></li><ul class="subnav"><li><a href="#genel-bakis">Genel Bakış</a></li>
+<li><a href="#tarihce">Tarihçe</a></li>
+<li><a href="#ozellikler">Özellikler</a></li>
+<li><a href="#yapilandirma">Yapılandırma</a></li>
+<li><a href="#ayrica-bakiniz">Ayrıca Bakınız</a></li>
+<li><a href="#kaynaklar">Kaynaklar</a></li></ul><li><a href="tmux.html" class="">tmux</a></li></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Proje</p>
+          <ul><li><a href="templates.html" class="">Şablonlar</a></li><li><a href="search.html" class="">Tüm Maddeler</a></li><li><a href="about.html" class="">Wiki hakkında</a></li><li><a href="contact.html" class="">İletişim</a></li></ul>
+        </div>
+        
+      <hr class="nav-divider">
+      <a class="footer-link" href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">Kaynak kod (GitHub)</a>
+    </nav>
+    
+
+  <article class="article" id="top">
+    <p class="subtitle-tag">Editör &middot; Vim Fork'u &middot; 2014</p>
+    <h1 class="page-title">Neovim</h1>
+
+    <p class="lede">
+      <strong>Neovim</strong>, 2014'te Thiago de Arruda tarafından başlatılan,
+      Vim'in koduna Lua tabanlı bir eklenti mimarisi, gömülü bir terminal ve
+      asenkron işlem desteği kazandırmayı hedefleyen bir fork'udur (çatal
+      proje).
+    </p>
+
+    <h2 id="genel-bakis">Genel Bakış</h2>
+    <p>
+      Vim, yıllar içinde büyüyen kod tabanı ve eklenti yazımının VimScript
+      diline bağımlı kalması nedeniyle genişletilmesi zorlaşan bir projeye
+      dönüşmüştü. Neovim, temel düzenleme deneyimini korurken kod tabanını
+      sadeleştirmeyi, dış araçlarla (dil sunucuları, hata ayıklayıcılar)
+      entegrasyonu kolaylaştırmayı ve eklenti yazımını modern bir dil olan
+      Lua ile mümkün kılmayı amaçladı.
+    </p>
+
+    <h2 id="tarihce">Tarihçe</h2>
+    <p>
+      Proje 2014'te bir GitHub deposu olarak başladı ve kısa sürede geniş bir
+      katkıcı tabanı topladı. 2018'de gömülü terminal, 2019'da Lua
+      betikleme desteği ve 2021'de yayımlanan 0.5 sürümüyle birlikte
+      dahili bir <strong>LSP (Language Server Protocol)</strong> istemcisi
+      geldi — bu, kod tamamlama ve hata denetimi gibi IDE özelliklerinin
+      harici eklentiler olmadan da temel düzeyde çalışmasını sağladı. Daha
+      sonra eklenen <strong>Tree-sitter</strong> desteğiyse sözdizimi
+      vurgulamayı normal ifadeler yerine gerçek bir ayrıştırıcıya (parser)
+      dayandırdı.
+    </p>
+
+    <h2 id="ozellikler">Özellikler</h2>
+    <ul>
+      <li><strong>Lua ile yapılandırma</strong> — VimScript hâlâ desteklenir,
+      ancak eklentiler ve ayarlar artık Lua ile de yazılabilir.</li>
+      <li><strong>Dahili LSP istemcisi</strong> — <code>pyright</code>,
+      <code>tsserver</code> gibi dil sunucularına doğrudan bağlanabilir.</li>
+      <li><strong>Tree-sitter tabanlı vurgulama</strong> — kod yapısını
+      gerçekten ayrıştırarak daha doğru renklendirme ve girinti.</li>
+      <li><strong>Gömülü terminal</strong> — editörden çıkmadan bir kabuk
+      açılabilir (<code>:terminal</code>).</li>
+      <li><strong>Uzaktan API</strong> — eklentilerin başka dillerde (Python,
+      Rust) yazılıp Neovim'e bağlanmasına imkân tanıyan bir RPC arayüzü.</li>
+    </ul>
+
+    <h2 id="yapilandirma">Yapılandırma</h2>
+    <p>
+      Modern Neovim kurulumları genellikle <code>~/.config/nvim/init.lua</code>
+      dosyasından başlar:
+    </p>
+    <div class="config-block"><span class="c-comment">-- ~/.config/nvim/init.lua</span>
+vim.opt.number = <span class="c-key">true</span>
+vim.opt.relativenumber = <span class="c-key">true</span>
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.g.mapleader = <span class="c-str">" "</span></div>
+    <p>
+      Eklenti yönetimi için <code>lazy.nvim</code> veya <code>packer.nvim</code>
+      gibi Lua tabanlı yöneticiler yaygın olarak kullanılır.
+    </p>
+
+    <h2 id="ayrica-bakiniz">Ayrıca Bakınız</h2>
+    <ul>
+      <li><a href="kabuk.html">Unix kabuğu</a></li>
+      <li><a href="tmux.html">tmux</a></li>
+      <li><a href="bash.html">Bash</a></li>
+    </ul>
+
+    <h2 id="kaynaklar">Kaynaklar</h2>
+    <ol class="refs">
+      <li>Neovim katkıcıları, resmi belgeler, neovim.io.</li>
+      <li>Bu maddenin ilk sürümü XZ Sides Wiki katkıcıları tarafından yazılmıştır.</li>
+    </ol>
+  </article>
+
+  
+    <aside class="infobox">
+      <div class="term-media">
+        <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="glyph">nvim</div>
+        <div><span class="prompt">$</span> <span class="cmd">nvim --version</span></div>
+<div><div style="color:#8b949e;">NVIM 0.10.x</div></div>
+      </div>
+      <table>
+        <tr><th>Tür</th><td>Terminal tabanlı metin editörü</td></tr>
+<tr><th>Fork edildiği proje</th><td>Vim</td></tr>
+<tr><th>İlk sürüm</th><td>2014</td></tr>
+<tr><th>Yazıldığı dil</th><td>C, Lua</td></tr>
+<tr><th>Lisans</th><td>Apache 2.0 / Vim lisansı</td></tr>
+<tr><th>Yapılandırma dosyası</th><td><code>~/.config/nvim/init.lua</code></td></tr>
+      </table>
+      <a class="view-more" href="https://neovim.io" target="_blank" rel="noopener">neovim.io sitesine git &rarr;</a>
+    </aside>
+    
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Bu içerik XZ Sides Wiki katkıcıları tarafından yazılmıştır. Ticari bir kaynak değildir.</span>
+    <ul>
+      <li><a href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">Kaynak kod</a></li>
+      <li><a href="https://www.youtube.com/@asherbtww" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="about.html">Hakkında</a></li>
+      <li><a href="contact.html">İletişim</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

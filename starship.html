@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Starship — Wiki</title>
+<meta name="description" content="Starship prompt aracının tarihçesi, özellikleri ve yapılandırması üzerine wiki maddesi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/wiki.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
+<header class="site-header">
+  <div class="wrap header-row">
+    <label for="nav-toggle" class="hamburger" aria-label="Menüyü aç/kapat">&#9776;</label>
+    <a href="index.html" class="wordmark">
+      <span class="mark">&gt;_</span>
+      <span class="word">Wiki</span>
+    </a>
+    <ul class="tabs">
+      <li><a href="#top" class="active">Madde</a></li>
+      <li><a href="about.html">Tartışma</a></li>
+    </ul>
+    <div class="header-right">
+      <form class="search-form" role="search" action="search.html" method="get">
+        <input type="search" name="q" list="wiki-pages" placeholder="Wiki'de ara" autocomplete="off">
+        <datalist id="wiki-pages">
+<option value="Ana Sayfa">
+<option value="Unix kabuğu">
+<option value="Bash">
+<option value="Zsh">
+<option value="Starship">
+<option value="Neovim">
+<option value="tmux">
+<option value="Şablonlar">
+<option value="XZ Sides Wiki hakkında">
+<option value="İletişim">
+</datalist>
+        <button type="submit" aria-label="Ara">&#128269;</button>
+      </form>
+      <a class="account" href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">
+        <span class="gh-mark">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+          0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
+          1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+          0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68
+          0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+          0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01
+          8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </span>
+        <span class="account-text">
+          <span class="a-label">Kaynak kod</span>
+          <span class="a-name">xzsides/xzsidesw</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap page">
+  
+    <nav class="docs-nav">
+      <label for="nav-toggle" class="drawer-close" aria-label="Menüyü kapat">&times;</label>
+      <a href="index.html" class="home-link">&#8962; Ana Sayfa</a>
+      
+        <div class="nav-group">
+          <p class="nav-group-title">Genel</p>
+          <ul><li><a href="kabuk.html" class="">Unix kabuğu</a></li></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Kabuklar</p>
+          <ul><li><a href="bash.html" class="">Bash</a></li><li><a href="zsh.html" class="">Zsh</a></li></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Araçlar</p>
+          <ul><li><a href="starship.html" class="active">Starship</a></li><ul class="subnav"><li><a href="#genel-bakis">Genel Bakış</a></li>
+<li><a href="#tarihce">Tarihçe</a></li>
+<li><a href="#ozellikler">Özellikler</a></li>
+<li><a href="#yapilandirma">Yapılandırma</a></li>
+<li><a href="#neden-populer">Neden Popüler</a></li>
+<li><a href="#ayrica-bakiniz">Ayrıca Bakınız</a></li>
+<li><a href="#kaynaklar">Kaynaklar</a></li></ul><li><a href="neovim.html" class="">Neovim</a></li><li><a href="tmux.html" class="">tmux</a></li></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Proje</p>
+          <ul><li><a href="templates.html" class="">Şablonlar</a></li><li><a href="search.html" class="">Tüm Maddeler</a></li><li><a href="about.html" class="">Wiki hakkında</a></li><li><a href="contact.html" class="">İletişim</a></li></ul>
+        </div>
+        
+      <hr class="nav-divider">
+      <a class="footer-link" href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">Kaynak kod (GitHub)</a>
+    </nav>
+    
+
+  <article class="article" id="top">
+    <p class="subtitle-tag">Prompt Aracı &middot; Rust &middot; 2019</p>
+    <h1 class="page-title">Starship</h1>
+
+    <p class="lede">
+      <strong>Starship</strong>, 2019'da açık kaynak olarak yayımlanan, Rust
+      dilinde yazılmış, kabuktan bağımsız bir komut satırı prompt aracıdır.
+      Tek bir <code>starship.toml</code> yapılandırma dosyasıyla Bash, Zsh,
+      Fish, PowerShell gibi farklı kabuklarda aynı görünüme sahip bir prompt
+      üretir.
+    </p>
+
+    <h2 id="genel-bakis">Genel Bakış</h2>
+    <p>
+      Geleneksel olarak her kabuğun kendi prompt söz dizimi vardır (Bash'te
+      <code>PS1</code>, Zsh'te <code>PROMPT</code>). Starship bu farkı ortadan
+      kaldırarak, kabuğun başlatma dosyasına tek satırlık bir
+      <code>eval "$(starship init &lt;kabuk&gt;)"</code> komutu eklemeyi ve
+      geri kalan tüm görünüm ayarlarını TOML formatında merkezi bir dosyada
+      tutmayı önerir.
+    </p>
+
+    <h2 id="tarihce">Tarihçe</h2>
+    <p>
+      Proje, önceki nesil kabuktan bağımsız prompt araçlarının (ör. Powerline,
+      Powerlevel10k) yavaşlığından ve karmaşık kurulumundan rahatsız olan
+      geliştiriciler tarafından Rust ile yeniden tasarlandı. Rust'ın
+      derlenmiş, çöp toplayıcısız yapısı, prompt'un her komuttan sonra
+      fark edilir bir gecikme olmadan yeniden çizilmesini mümkün kıldı.
+      Starship kısa sürede GitHub'da geniş bir katkıcı topluluğu topladı.
+    </p>
+
+    <h2 id="ozellikler">Özellikler</h2>
+    <ul>
+      <li><strong>Modüler yapı</strong> — git dalı/durumu, dizin yolu, çalışma
+      zamanı sürümleri (Node.js, Python, Rust vb.), pil durumu gibi onlarca
+      "modül" ayrı ayrı açılıp kapatılabilir.</li>
+      <li><strong>Bağlama duyarlılık</strong> — bir Node.js projesinin
+      klasöründeyken Node sürümü, bir Git deposundayken dal adı otomatik
+      belirir.</li>
+      <li><strong>Hız odaklı tasarım</strong> — modüller paralel ve zaman
+      aşımlı çalışır; yavaş bir modül tüm prompt'u kilitlemez.</li>
+      <li><strong>Hazır temalar</strong> — Nerd Font simgeleriyle veya
+      simgesiz, salt ASCII biçiminde kullanılabilir.</li>
+    </ul>
+
+    <h2 id="yapilandirma">Yapılandırma</h2>
+    <p>
+      Tüm görünüm <code>~/.config/starship.toml</code> dosyasında tanımlanır.
+      Aşağıdaki örnek, dizin yolunu ve git dalını gösteren minimal bir
+      yapılandırmadır:
+    </p>
+    <div class="config-block"><span class="c-comment"># ~/.config/starship.toml</span>
+format = <span class="c-str">"$directory$git_branch$character"</span>
+
+[directory]
+truncation_length = 3
+style = <span class="c-str">"blue bold"</span>
+
+[git_branch]
+symbol = <span class="c-str">"on "</span>
+style = <span class="c-str">"purple"</span>
+
+[character]
+success_symbol = <span class="c-str">"[➜](green)"</span></div>
+    <p>
+      Bir kabukta etkinleştirmek için ilgili başlatma dosyasına tek satır
+      eklemek yeterlidir, örneğin Zsh için <code>~/.zshrc</code> içine
+      <code>eval "$(starship init zsh)"</code>.
+    </p>
+
+    <h2 id="neden-populer">Neden Popüler</h2>
+    <p>
+      Starship'in yaygınlaşmasının başlıca nedeni, kullanıcıların kabuk
+      değiştirdiğinde (örneğin Bash'ten Zsh'e ya da Fish'e geçtiğinde) prompt
+      yapılandırmasını yeniden yazmak zorunda kalmamasıdır. Tek dosyalık
+      kurulumu, dotfiles depolarında paylaşılabilir ve sürüm kontrolüne
+      alınabilir olması da benimsenmesini kolaylaştırmıştır.
+    </p>
+
+    <h2 id="ayrica-bakiniz">Ayrıca Bakınız</h2>
+    <ul>
+      <li><a href="kabuk.html">Unix kabuğu</a></li>
+      <li><a href="zsh.html">Zsh</a></li>
+      <li><a href="bash.html">Bash</a></li>
+      <li><a href="tmux.html">tmux</a></li>
+    </ul>
+
+    <h2 id="kaynaklar">Kaynaklar</h2>
+    <ol class="refs">
+      <li>Starship katkıcıları, resmi belgeler, starship.rs.</li>
+      <li>Bu maddenin ilk sürümü XZ Sides Wiki katkıcıları tarafından yazılmıştır.</li>
+    </ol>
+  </article>
+
+  
+    <aside class="infobox">
+      <div class="term-media">
+        <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="glyph">&#9733;</div>
+        <div><span class="prompt">$</span> <span class="cmd">starship --version</span></div>
+<div><div style="color:#8b949e;">starship 1.x</div></div>
+      </div>
+      <table>
+        <tr><th>Tür</th><td>Kabuktan bağımsız prompt aracı</td></tr>
+<tr><th>Yazıldığı dil</th><td>Rust</td></tr>
+<tr><th>İlk sürüm</th><td>2019</td></tr>
+<tr><th>Lisans</th><td>ISC (özgür yazılım)</td></tr>
+<tr><th>Desteklediği kabuklar</th><td>Bash, Zsh, Fish, PowerShell, Nushell</td></tr>
+<tr><th>Yapılandırma dosyası</th><td><code>~/.config/starship.toml</code></td></tr>
+      </table>
+      <a class="view-more" href="https://starship.rs" target="_blank" rel="noopener">starship.rs sitesine git &rarr;</a>
+    </aside>
+    
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Bu içerik XZ Sides Wiki katkıcıları tarafından yazılmıştır. Ticari bir kaynak değildir.</span>
+    <ul>
+      <li><a href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">Kaynak kod</a></li>
+      <li><a href="https://www.youtube.com/@asherbtww" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="about.html">Hakkında</a></li>
+      <li><a href="contact.html">İletişim</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

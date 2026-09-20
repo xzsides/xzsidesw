@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zsh — Wiki</title>
+<meta name="description" content="Zsh kabuğunun tarihçesi, eklenti ekosistemi ve yapılandırması üzerine wiki maddesi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/wiki.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
+<header class="site-header">
+  <div class="wrap header-row">
+    <label for="nav-toggle" class="hamburger" aria-label="Menüyü aç/kapat">&#9776;</label>
+    <a href="index.html" class="wordmark">
+      <span class="mark">&gt;_</span>
+      <span class="word">Wiki</span>
+    </a>
+    <ul class="tabs">
+      <li><a href="#top" class="active">Madde</a></li>
+      <li><a href="about.html">Tartışma</a></li>
+    </ul>
+    <div class="header-right">
+      <form class="search-form" role="search" action="search.html" method="get">
+        <input type="search" name="q" list="wiki-pages" placeholder="Wiki'de ara" autocomplete="off">
+        <datalist id="wiki-pages">
+<option value="Ana Sayfa">
+<option value="Unix kabuğu">
+<option value="Bash">
+<option value="Zsh">
+<option value="Starship">
+<option value="Neovim">
+<option value="tmux">
+<option value="Şablonlar">
+<option value="XZ Sides Wiki hakkında">
+<option value="İletişim">
+</datalist>
+        <button type="submit" aria-label="Ara">&#128269;</button>
+      </form>
+      <a class="account" href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">
+        <span class="gh-mark">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+          0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
+          1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+          0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68
+          0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+          0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01
+          8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </span>
+        <span class="account-text">
+          <span class="a-label">Kaynak kod</span>
+          <span class="a-name">xzsides/xzsidesw</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap page">
+  
+    <nav class="docs-nav">
+      <label for="nav-toggle" class="drawer-close" aria-label="Menüyü kapat">&times;</label>
+      <a href="index.html" class="home-link">&#8962; Ana Sayfa</a>
+      
+        <div class="nav-group">
+          <p class="nav-group-title">Genel</p>
+          <ul><li><a href="kabuk.html" class="">Unix kabuğu</a></li></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Kabuklar</p>
+          <ul><li><a href="bash.html" class="">Bash</a></li><li><a href="zsh.html" class="active">Zsh</a></li><ul class="subnav"><li><a href="#genel-bakis">Genel Bakış</a></li>
+<li><a href="#tarihce">Tarihçe</a></li>
+<li><a href="#ozellikler">Özellikler</a></li>
+<li><a href="#eklenti-ekosistemi">Eklenti Ekosistemi</a></li>
+<li><a href="#yapilandirma">Yapılandırma</a></li>
+<li><a href="#ayrica-bakiniz">Ayrıca Bakınız</a></li>
+<li><a href="#kaynaklar">Kaynaklar</a></li></ul></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Araçlar</p>
+          <ul><li><a href="starship.html" class="">Starship</a></li><li><a href="neovim.html" class="">Neovim</a></li><li><a href="tmux.html" class="">tmux</a></li></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Proje</p>
+          <ul><li><a href="templates.html" class="">Şablonlar</a></li><li><a href="search.html" class="">Tüm Maddeler</a></li><li><a href="about.html" class="">Wiki hakkında</a></li><li><a href="contact.html" class="">İletişim</a></li></ul>
+        </div>
+        
+      <hr class="nav-divider">
+      <a class="footer-link" href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">Kaynak kod (GitHub)</a>
+    </nav>
+    
+
+  <article class="article" id="top">
+    <p class="subtitle-tag">Kabuk &middot; Bağımsız Proje &middot; 1990</p>
+    <h1 class="page-title">Zsh</h1>
+
+    <p class="lede">
+      <strong>Zsh</strong> (<em>Z Shell</em>), 1990'da Princeton Üniversitesi
+      öğrencisi Paul Falstad tarafından yazılan, Bash ve Korn shell'in
+      özelliklerini birleştirip üzerine gelişmiş tamamlama, yazım düzeltme ve
+      tema desteği ekleyen bir kabuktur. 2019'dan bu yana macOS'un varsayılan
+      kabuğudur.
+    </p>
+
+    <h2 id="genel-bakis">Genel Bakış</h2>
+    <p>
+      Zsh, çoğu Bash betiğini değişiklik yapmadan çalıştırabilecek kadar
+      uyumludur, ancak etkileşimli kullanımda oldukça farklı bir deneyim sunar:
+      daha akıllı bir tamamlama motoru (<code>compinit</code>), gelişmiş dosya
+      eşleme (extended globbing) ve yazım hatalarını otomatik düzeltme
+      (<code>correct</code>) gibi özellikler barındırır.
+    </p>
+
+    <h2 id="tarihce">Tarihçe</h2>
+    <p>
+      Falstad, Zsh'i başlangıçta kendi ihtiyaçları için yazdı ve adını
+      Yale Üniversitesi'ndeki bir hesap makinesi kullanıcı adından
+      (<em>zhong</em>) esinlenerek verdiği söylenir. Zaman içinde topluluk
+      projesi hâline geldi ve bakımı gönüllü katkıcılara geçti. 2019'da Apple,
+      lisans uyuşmazlıkları nedeniyle Bash'in yeni sürümlerini macOS'a
+      taşıyamayınca varsayılan kabuğu Zsh olarak değiştirdi; bu karar Zsh'in
+      kullanıcı tabanını önemli ölçüde büyüttü.
+    </p>
+
+    <h2 id="ozellikler">Özellikler</h2>
+    <ul>
+      <li><strong>Gelişmiş tamamlama</strong> — komut seçenekleri, dosya yolları
+      ve hatta git dal adları için bağlama duyarlı öneriler.</li>
+      <li><strong>Genişletilmiş globbing</strong> — <code>**/*.log</code> gibi
+      özyinelemeli dosya eşlemeleri doğrudan çalışır.</li>
+      <li><strong>Yazım düzeltme</strong> — <code>cd</code> ile yanlış yazılmış
+      dizin adlarını tanıyıp öneri sunabilir.</li>
+      <li><strong>Tema ve prompt sistemi</strong> — <code>PROMPT</code>/<code>RPROMPT</code>
+      değişkenleriyle sağ hizalı bilgiler dâhil zengin prompt tasarımı.</li>
+      <li><strong>Modüler yapı</strong> — <code>zmodload</code> ile ek
+      yeteneklerin (matematik, ağ, tarih) isteğe bağlı yüklenmesi.</li>
+    </ul>
+
+    <h2 id="eklenti-ekosistemi">Eklenti Ekosistemi</h2>
+    <p>
+      Zsh'in çıplak hâli güçlü olsa da, popülerliğinin büyük kısmı üzerine
+      kurulan çerçevelerden gelir. 2009'da Robby Russell tarafından başlatılan
+      <strong>Oh My Zsh</strong>, yüzlerce hazır tema ve eklentiyi (otomatik
+      öneri, sözdizimi vurgulama, git kısayolları) tek bir kurulumla sunarak
+      Zsh'i yeni başlayanlar için erişilebilir hâle getirdi. <strong>Prezto</strong>
+      ve daha hafif <strong>zinit</strong>/<strong>zap</strong> gibi alternatifler
+      de aynı ihtiyacı farklı hız/esneklik dengeleriyle karşılar.
+    </p>
+
+    <h2 id="yapilandirma">Yapılandırma</h2>
+    <p>
+      Zsh, tüm etkileşimli ayarlarını <code>~/.zshrc</code> dosyasından okur.
+      Bu depoda paylaşılan
+      <a href="resources/template/zshrc-template" download>başlangıç şablonu</a>,
+      yeni bir Zsh kurulumuna hızlı başlamak için asgari bir iskelet sağlar:
+    </p>
+    <div class="config-block"><span class="c-comment"># ~/.zshrc — asgari başlangıç şablonu</span>
+<span class="c-key">export</span> EDITOR=<span class="c-str">nvim</span>
+<span class="c-key">alias</span> ll=<span class="c-str">'ls -alF'</span>
+
+<span class="c-comment"># tamamlama sistemini başlat</span>
+autoload -Uz compinit &amp;&amp; compinit
+
+<span class="c-comment"># kabuktan bağımsız prompt için starship kullan</span>
+<span class="c-key">eval</span> <span class="c-str">"$(starship init zsh)"</span></div>
+    <p>
+      Prompt'u elle biçimlendirmek yerine <a href="starship.html">Starship</a>
+      gibi bir araç kullanmak, aynı yapılandırmanın Bash ve Fish gibi diğer
+      kabuklarla da paylaşılmasını sağlar.
+    </p>
+
+    <h2 id="ayrica-bakiniz">Ayrıca Bakınız</h2>
+    <ul>
+      <li><a href="kabuk.html">Unix kabuğu</a></li>
+      <li><a href="bash.html">Bash</a></li>
+      <li><a href="starship.html">Starship</a></li>
+      <li><a href="templates.html">Şablonlar — .zshrc dosyasını indir</a></li>
+    </ul>
+
+    <h2 id="kaynaklar">Kaynaklar</h2>
+    <ol class="refs">
+      <li>Paul Falstad ve Zsh katkıcıları, <em>Zsh Manual</em>, zsh.sourceforge.io.</li>
+      <li>Robby Russell, Oh My Zsh proje sayfası.</li>
+      <li>Bu maddenin ilk sürümü XZ Sides Wiki katkıcıları tarafından yazılmıştır.</li>
+    </ol>
+  </article>
+
+  
+    <aside class="infobox">
+      <div class="term-media">
+        <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="glyph">zsh</div>
+        <div><span class="prompt">$</span> <span class="cmd">echo $ZSH_VERSION</span></div>
+<div><div style="color:#8b949e;">5.9</div></div>
+      </div>
+      <table>
+        <tr><th>Tam adı</th><td>Z Shell</td></tr>
+<tr><th>Geliştirici</th><td>Paul Falstad (1990)</td></tr>
+<tr><th>İlk sürüm</th><td>1990</td></tr>
+<tr><th>Yazıldığı dil</th><td>C</td></tr>
+<tr><th>Lisans</th><td>MIT benzeri, özgür</td></tr>
+<tr><th>Yapılandırma dosyası</th><td><code>~/.zshrc</code></td></tr>
+<tr><th>Varsayılan olduğu yerler</th><td>macOS (10.15+), Kali Linux</td></tr>
+<tr><th>Popüler çerçeve</th><td>Oh My Zsh, Prezto, zinit</td></tr>
+      </table>
+      <a class="view-more" href="resources/template/zshrc-template" target="_blank" rel="noopener">Örnek .zshrc şablonunu indir &rarr;</a>
+    </aside>
+    
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Bu içerik XZ Sides Wiki katkıcıları tarafından yazılmıştır. Ticari bir kaynak değildir.</span>
+    <ul>
+      <li><a href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">Kaynak kod</a></li>
+      <li><a href="https://www.youtube.com/@asherbtww" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="about.html">Hakkında</a></li>
+      <li><a href="contact.html">İletişim</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

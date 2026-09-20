@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bash — Wiki</title>
+<meta name="description" content="Bash kabuğunun tarihçesi, özellikleri ve yapılandırması üzerine wiki maddesi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/wiki.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
+<header class="site-header">
+  <div class="wrap header-row">
+    <label for="nav-toggle" class="hamburger" aria-label="Menüyü aç/kapat">&#9776;</label>
+    <a href="index.html" class="wordmark">
+      <span class="mark">&gt;_</span>
+      <span class="word">Wiki</span>
+    </a>
+    <ul class="tabs">
+      <li><a href="#top" class="active">Madde</a></li>
+      <li><a href="about.html">Tartışma</a></li>
+    </ul>
+    <div class="header-right">
+      <form class="search-form" role="search" action="search.html" method="get">
+        <input type="search" name="q" list="wiki-pages" placeholder="Wiki'de ara" autocomplete="off">
+        <datalist id="wiki-pages">
+<option value="Ana Sayfa">
+<option value="Unix kabuğu">
+<option value="Bash">
+<option value="Zsh">
+<option value="Starship">
+<option value="Neovim">
+<option value="tmux">
+<option value="Şablonlar">
+<option value="XZ Sides Wiki hakkında">
+<option value="İletişim">
+</datalist>
+        <button type="submit" aria-label="Ara">&#128269;</button>
+      </form>
+      <a class="account" href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">
+        <span class="gh-mark">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+          0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
+          1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+          0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68
+          0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+          0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01
+          8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </span>
+        <span class="account-text">
+          <span class="a-label">Kaynak kod</span>
+          <span class="a-name">xzsides/xzsidesw</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap page">
+  
+    <nav class="docs-nav">
+      <label for="nav-toggle" class="drawer-close" aria-label="Menüyü kapat">&times;</label>
+      <a href="index.html" class="home-link">&#8962; Ana Sayfa</a>
+      
+        <div class="nav-group">
+          <p class="nav-group-title">Genel</p>
+          <ul><li><a href="kabuk.html" class="">Unix kabuğu</a></li></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Kabuklar</p>
+          <ul><li><a href="bash.html" class="active">Bash</a></li><ul class="subnav"><li><a href="#genel-bakis">Genel Bakış</a></li>
+<li><a href="#tarihce">Tarihçe</a></li>
+<li><a href="#ozellikler">Özellikler</a></li>
+<li><a href="#yapilandirma">Yapılandırma</a></li>
+<li><a href="#kullanim">Günümüzde Kullanım</a></li>
+<li><a href="#ayrica-bakiniz">Ayrıca Bakınız</a></li>
+<li><a href="#kaynaklar">Kaynaklar</a></li></ul><li><a href="zsh.html" class="">Zsh</a></li></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Araçlar</p>
+          <ul><li><a href="starship.html" class="">Starship</a></li><li><a href="neovim.html" class="">Neovim</a></li><li><a href="tmux.html" class="">tmux</a></li></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Proje</p>
+          <ul><li><a href="templates.html" class="">Şablonlar</a></li><li><a href="search.html" class="">Tüm Maddeler</a></li><li><a href="about.html" class="">Wiki hakkında</a></li><li><a href="contact.html" class="">İletişim</a></li></ul>
+        </div>
+        
+      <hr class="nav-divider">
+      <a class="footer-link" href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">Kaynak kod (GitHub)</a>
+    </nav>
+    
+
+  <article class="article" id="top">
+    <p class="subtitle-tag">Kabuk &middot; GNU Projesi &middot; 1989</p>
+    <h1 class="page-title">Bash</h1>
+
+    <p class="lede">
+      <strong>Bash</strong> (<em>Bourne Again SHell</em>), 1989 yılında Brian Fox
+      tarafından GNU Projesi için yazılan, Bourne shell'in (sh) özgür yazılım
+      lisansıyla dağıtılan bir yeniden uygulamasıdır. Bugün çoğu Linux dağıtımında
+      ve Windows Subsystem for Linux (WSL) üzerinde varsayılan kabuk olarak gelir;
+      2019'a kadar macOS'un da varsayılan kabuğuydu.
+    </p>
+
+    <h2 id="genel-bakis">Genel Bakış</h2>
+    <p>
+      Bash, hem etkileşimli bir kabuk hem de bağımsız bir betik dilidir. POSIX
+      kabuk standardına büyük ölçüde uyar, üzerine dizi (array) değişkenleri,
+      dize (brace) genişletmesi, gelişmiş <code>[[ ]]</code> koşul yapısı ve
+      Readline tabanlı komut satırı düzenleme gibi GNU'ya özgü eklemeler yapar.
+    </p>
+    <p>
+      Sistem yöneticiliğinden CI/CD betiklerine, kurulum script'lerinden
+      <code>.bashrc</code> içindeki küçük otomasyonlara kadar, Bash betikleri
+      Unix dünyasının en yaygın "yapıştırıcı dili" olmayı sürdürüyor.
+    </p>
+
+    <h2 id="tarihce">Tarihçe</h2>
+    <p>
+      GNU Projesi, 1980'lerin sonunda özgür bir işletim sistemi hedefiyle
+      Unix araçlarının özgür muadillerini yazıyordu. Orijinal Bourne shell
+      özgür lisanslı olmadığından, Brian Fox 1988'de Bash üzerinde çalışmaya
+      başladı ve ilk kararlı sürüm 1989'da yayımlandı. Proje kısa sürede
+      Chet Ramey'in bakımına geçti; Ramey bugün hâlâ Bash'in başlıca
+      bakımcısıdır.
+    </p>
+
+    <h2 id="ozellikler">Özellikler</h2>
+    <ul>
+      <li><strong>Komut geçmişi ve düzenleme</strong> — Readline kütüphanesi sayesinde
+      ok tuşlarıyla geçmişte gezinme, <code>Ctrl+R</code> ile ters arama.</li>
+      <li><strong>Job control</strong> — <code>&amp;</code>, <code>fg</code>, <code>bg</code>,
+      <code>jobs</code> ile arka plan süreç yönetimi.</li>
+      <li><strong>Genişletme mekanizmaları</strong> — brace genişletmesi
+      (<code>{a,b,c}</code>), parametre genişletmesi, komut ikamesi
+      (<code>$(...)</code>), aritmetik genişletme (<code>$(( ))</code>).</li>
+      <li><strong>Fonksiyonlar ve diziler</strong> — betikleri modüler hâle
+      getirmeye yeten temel programlama yapıları.</li>
+      <li><strong>Tab tamamlama</strong> — dosya adları, komutlar ve
+      <code>complete</code> ile tanımlanan özel tamamlamalar.</li>
+    </ul>
+
+    <h2 id="yapilandirma">Yapılandırma</h2>
+    <p>
+      Etkileşimli bir Bash oturumu açıldığında sırasıyla <code>/etc/profile</code>,
+      ardından kullanıcıya özel <code>~/.bash_profile</code> ya da
+      <code>~/.bashrc</code> dosyaları okunur. Takma adlar (alias), ortam
+      değişkenleri ve prompt biçimi (<code>PS1</code>) genellikle burada tanımlanır:
+    </p>
+    <div class="config-block"><span class="c-comment"># ~/.bashrc içinden örnek</span>
+<span class="c-key">alias</span> ll=<span class="c-str">'ls -alF'</span>
+<span class="c-key">export</span> EDITOR=<span class="c-str">nvim</span>
+<span class="c-key">export</span> PATH=<span class="c-str">"$HOME/.local/bin:$PATH"</span>
+
+<span class="c-comment"># basit bir prompt: kullanıcı@makine dizin $</span>
+<span class="c-key">PS1</span>=<span class="c-str">'\u@\h \w \$ '</span></div>
+    <p>
+      Daha görsel ve modüler bir prompt isteyen kullanıcılar, <code>PS1</code>
+      ile uğraşmak yerine <a href="starship.html">Starship</a> gibi harici
+      araçları Bash ile birlikte kullanabilir.
+    </p>
+
+    <h2 id="kullanim">Günümüzde Kullanım</h2>
+    <p>
+      Bash, POSIX uyumluluğu ve neredeyse her yerde bulunması sayesinde betik
+      yazımında hâlâ fiili standarttır; Docker imajlarından sunucu kurulum
+      script'lerine kadar geniş bir alanda tercih edilir. Etkileşimli günlük
+      kullanımda ise birçok geliştirici, gelişmiş tamamlama ve tema desteği
+      için <a href="zsh.html">Zsh</a>'e geçmeyi tercih eder.
+    </p>
+
+    <h2 id="ayrica-bakiniz">Ayrıca Bakınız</h2>
+    <ul>
+      <li><a href="kabuk.html">Unix kabuğu</a></li>
+      <li><a href="zsh.html">Zsh</a></li>
+      <li><a href="starship.html">Starship</a></li>
+      <li><a href="templates.html">Şablonlar</a></li>
+    </ul>
+
+    <h2 id="kaynaklar">Kaynaklar</h2>
+    <ol class="refs">
+      <li>Chet Ramey, <em>Bash Reference Manual</em>, GNU Projesi.</li>
+      <li>Free Software Foundation, GNU Bash proje sayfası.</li>
+      <li>Bu maddenin ilk sürümü XZ Sides Wiki katkıcıları tarafından yazılmıştır.</li>
+    </ol>
+  </article>
+
+  
+    <aside class="infobox">
+      <div class="term-media">
+        <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="glyph">bash</div>
+        <div><span class="prompt">$</span> <span class="cmd">bash --version</span></div>
+<div><div style="color:#8b949e;">GNU bash, sürüm 5.x</div></div>
+      </div>
+      <table>
+        <tr><th>Tam adı</th><td>Bourne Again SHell</td></tr>
+<tr><th>Geliştirici</th><td>Brian Fox, GNU Projesi (FSF)</td></tr>
+<tr><th>İlk sürüm</th><td>1989</td></tr>
+<tr><th>Yazıldığı dil</th><td>C</td></tr>
+<tr><th>Lisans</th><td>GPLv3+</td></tr>
+<tr><th>Yapılandırma dosyası</th><td><code>~/.bashrc</code>, <code>~/.bash_profile</code></td></tr>
+<tr><th>Varsayılan olduğu yerler</th><td>Çoğu Linux dağıtımı, WSL</td></tr>
+      </table>
+      <a class="view-more" href="resources/template/zshrc-template" target="_blank" rel="noopener">Şablonlara bak &rarr;</a>
+    </aside>
+    
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Bu içerik XZ Sides Wiki katkıcıları tarafından yazılmıştır. Ticari bir kaynak değildir.</span>
+    <ul>
+      <li><a href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">Kaynak kod</a></li>
+      <li><a href="https://www.youtube.com/@asherbtww" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="about.html">Hakkında</a></li>
+      <li><a href="contact.html">İletişim</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

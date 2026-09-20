@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XZ Sides Wiki</title>
+<meta name="description" content="Kabuk araçları ve terminal iş akışları üzerine küçük, odaklı bir wiki: Bash, Zsh, Starship, Neovim, tmux.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/wiki.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
+<header class="site-header">
+  <div class="wrap header-row">
+    <label for="nav-toggle" class="hamburger" aria-label="Menüyü aç/kapat">&#9776;</label>
+    <a href="index.html" class="wordmark">
+      <span class="mark">&gt;_</span>
+      <span class="word">Wiki</span>
+    </a>
+    <ul class="tabs">
+      <li><a href="#top" class="active">Madde</a></li>
+      <li><a href="about.html">Tartışma</a></li>
+    </ul>
+    <div class="header-right">
+      <form class="search-form" role="search" action="search.html" method="get">
+        <input type="search" name="q" list="wiki-pages" placeholder="Wiki'de ara" autocomplete="off">
+        <datalist id="wiki-pages">
+<option value="Ana Sayfa">
+<option value="Unix kabuğu">
+<option value="Bash">
+<option value="Zsh">
+<option value="Starship">
+<option value="Neovim">
+<option value="tmux">
+<option value="Şablonlar">
+<option value="XZ Sides Wiki hakkında">
+<option value="İletişim">
+</datalist>
+        <button type="submit" aria-label="Ara">&#128269;</button>
+      </form>
+      <a class="account" href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">
+        <span class="gh-mark">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+          0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
+          1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+          0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68
+          0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+          0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01
+          8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </span>
+        <span class="account-text">
+          <span class="a-label">Kaynak kod</span>
+          <span class="a-name">xzsides/xzsidesw</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap page no-infobox">
+  
+    <nav class="docs-nav">
+      <label for="nav-toggle" class="drawer-close" aria-label="Menüyü kapat">&times;</label>
+      <a href="index.html" class="home-link active">&#8962; Ana Sayfa</a>
+      
+        <div class="nav-group">
+          <p class="nav-group-title">Genel</p>
+          <ul><li><a href="kabuk.html" class="">Unix kabuğu</a></li></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Kabuklar</p>
+          <ul><li><a href="bash.html" class="">Bash</a></li><li><a href="zsh.html" class="">Zsh</a></li></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Araçlar</p>
+          <ul><li><a href="starship.html" class="">Starship</a></li><li><a href="neovim.html" class="">Neovim</a></li><li><a href="tmux.html" class="">tmux</a></li></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Proje</p>
+          <ul><li><a href="templates.html" class="">Şablonlar</a></li><li><a href="search.html" class="">Tüm Maddeler</a></li><li><a href="about.html" class="">Wiki hakkında</a></li><li><a href="contact.html" class="">İletişim</a></li></ul>
+        </div>
+        
+      <hr class="nav-divider">
+      <a class="footer-link" href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">Kaynak kod (GitHub)</a>
+    </nav>
+    
+
+  <div class="article" id="top">
+    <div class="portal-hero">
+      <p class="kicker">XZ Sides Wiki</p>
+      <h1>Kabuk araçları ve terminal iş akışları üzerine bir wiki</h1>
+      <p>
+        Bash'ten Starship'e, Zsh'ten tmux'a kadar günlük terminal kullanımını
+        şekillendiren araçları; kısa, doğrudan ve örnek yapılandırmalarla
+        anlatan küçük bir kaynak.
+      </p>
+      <div class="btn-row">
+        <a class="btn" href="kabuk.html">Unix kabuğu ile başla</a>
+        <a class="btn outlined" href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">Kaynak kod</a>
+      </div>
+    </div>
+
+    <p class="section-label">Konular</p>
+    <div class="topics-grid">
+      
+    <a class="topic-card" href="kabuk.html">
+      <p class="t-eyebrow">Genel</p>
+      <h3>Unix kabuğu</h3>
+      <p>Kabuk kavramı, tarihçesi ve bir komutun kabuk içinde nasıl çalıştığı.</p>
+    </a>
+
+
+    <a class="topic-card" href="bash.html">
+      <p class="t-eyebrow">Kabuk</p>
+      <h3>Bash</h3>
+      <p>GNU Projesi'nin 1989'dan beri süregelen, en yaygın varsayılan kabuğu.</p>
+    </a>
+
+
+    <a class="topic-card" href="zsh.html">
+      <p class="t-eyebrow">Kabuk</p>
+      <h3>Zsh</h3>
+      <p>Gelişmiş tamamlama, Oh My Zsh ekosistemi ve macOS'un varsayılan kabuğu.</p>
+    </a>
+
+
+    <a class="topic-card" href="starship.html">
+      <p class="t-eyebrow">Prompt</p>
+      <h3>Starship</h3>
+      <p>Rust ile yazılmış, kabuktan bağımsız, tek dosyalık prompt aracı.</p>
+    </a>
+
+
+    <a class="topic-card" href="neovim.html">
+      <p class="t-eyebrow">Editör</p>
+      <h3>Neovim</h3>
+      <p>Vim'in Lua tabanlı, LSP destekli modern fork'u.</p>
+    </a>
+
+
+    <a class="topic-card" href="tmux.html">
+      <p class="t-eyebrow">Çoklayıcı</p>
+      <h3>tmux</h3>
+      <p>Tek terminalde birden çok oturum, pencere ve panel yönetimi.</p>
+    </a>
+
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-cell"><div class="n">6</div><div class="l">Wiki maddesi</div></div>
+      <div class="stat-cell"><div class="n">1</div><div class="l">İndirilebilir şablon</div></div>
+      <div class="stat-cell"><div class="n">0</div><div class="l">JavaScript dosyası</div></div>
+      <div class="stat-cell"><div class="n">MIT</div><div class="l">Ruhuyla açık</div></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Bu içerik XZ Sides Wiki katkıcıları tarafından yazılmıştır. Ticari bir kaynak değildir.</span>
+    <ul>
+      <li><a href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">Kaynak kod</a></li>
+      <li><a href="https://www.youtube.com/@asherbtww" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="about.html">Hakkında</a></li>
+      <li><a href="contact.html">İletişim</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

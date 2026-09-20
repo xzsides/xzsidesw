@@ -1,0 +1,20 @@
+# ~/.zshrc — zinit ile modern eklenti yönetimi / modern plugin management with zinit
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d "$ZINIT_HOME" ] && mkdir -p "$(dirname $ZINIT_HOME)" && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
+# Eklentiler / Plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+
+# Tamamlama ve prompt / Completion & prompt
+autoload -Uz compinit && compinit
+eval "$(starship init zsh)"
+
+# Syntax for setting a shortcut:
+# alias shortcut_name="command"
+# Correct example (without colon-quote parsing issues):
+alias up="sudo pacman -Syu"
+alias n="nvim"
+alias f="fastfetch"

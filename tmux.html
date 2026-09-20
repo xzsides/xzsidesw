@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tmux — Wiki</title>
+<meta name="description" content="tmux terminal çoklayıcısının tarihçesi, temel kavramları ve yapılandırması üzerine wiki maddesi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/wiki.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
+<header class="site-header">
+  <div class="wrap header-row">
+    <label for="nav-toggle" class="hamburger" aria-label="Menüyü aç/kapat">&#9776;</label>
+    <a href="index.html" class="wordmark">
+      <span class="mark">&gt;_</span>
+      <span class="word">Wiki</span>
+    </a>
+    <ul class="tabs">
+      <li><a href="#top" class="active">Madde</a></li>
+      <li><a href="about.html">Tartışma</a></li>
+    </ul>
+    <div class="header-right">
+      <form class="search-form" role="search" action="search.html" method="get">
+        <input type="search" name="q" list="wiki-pages" placeholder="Wiki'de ara" autocomplete="off">
+        <datalist id="wiki-pages">
+<option value="Ana Sayfa">
+<option value="Unix kabuğu">
+<option value="Bash">
+<option value="Zsh">
+<option value="Starship">
+<option value="Neovim">
+<option value="tmux">
+<option value="Şablonlar">
+<option value="XZ Sides Wiki hakkında">
+<option value="İletişim">
+</datalist>
+        <button type="submit" aria-label="Ara">&#128269;</button>
+      </form>
+      <a class="account" href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">
+        <span class="gh-mark">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+          0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
+          1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+          0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68
+          0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+          0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01
+          8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </span>
+        <span class="account-text">
+          <span class="a-label">Kaynak kod</span>
+          <span class="a-name">xzsides/xzsidesw</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap page">
+  
+    <nav class="docs-nav">
+      <label for="nav-toggle" class="drawer-close" aria-label="Menüyü kapat">&times;</label>
+      <a href="index.html" class="home-link">&#8962; Ana Sayfa</a>
+      
+        <div class="nav-group">
+          <p class="nav-group-title">Genel</p>
+          <ul><li><a href="kabuk.html" class="">Unix kabuğu</a></li></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Kabuklar</p>
+          <ul><li><a href="bash.html" class="">Bash</a></li><li><a href="zsh.html" class="">Zsh</a></li></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Araçlar</p>
+          <ul><li><a href="starship.html" class="">Starship</a></li><li><a href="neovim.html" class="">Neovim</a></li><li><a href="tmux.html" class="active">tmux</a></li><ul class="subnav"><li><a href="#genel-bakis">Genel Bakış</a></li>
+<li><a href="#tarihce">Tarihçe</a></li>
+<li><a href="#temel-kavramlar">Temel Kavramlar</a></li>
+<li><a href="#yapilandirma">Yapılandırma</a></li>
+<li><a href="#ayrica-bakiniz">Ayrıca Bakınız</a></li>
+<li><a href="#kaynaklar">Kaynaklar</a></li></ul></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Proje</p>
+          <ul><li><a href="templates.html" class="">Şablonlar</a></li><li><a href="search.html" class="">Tüm Maddeler</a></li><li><a href="about.html" class="">Wiki hakkında</a></li><li><a href="contact.html" class="">İletişim</a></li></ul>
+        </div>
+        
+      <hr class="nav-divider">
+      <a class="footer-link" href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">Kaynak kod (GitHub)</a>
+    </nav>
+    
+
+  <article class="article" id="top">
+    <p class="subtitle-tag">Terminal Çoklayıcısı &middot; BSD Lisansı &middot; 2007</p>
+    <h1 class="page-title">tmux</h1>
+
+    <p class="lede">
+      <strong>tmux</strong>, 2007'de Nicholas Marriott tarafından yazılan,
+      tek bir terminal penceresi içinde birden çok bağımsız oturum, pencere
+      ve panel çalıştırmayı sağlayan açık kaynaklı bir terminal
+      çoklayıcısıdır. GNU Screen'e BSD lisanslı bir alternatif olarak
+      tasarlanmıştır.
+    </p>
+
+    <h2 id="genel-bakis">Genel Bakış</h2>
+    <p>
+      Bir terminal çoklayıcısı, tek bir kabuk oturumunun sunduğu deneyimi bir
+      kat yukarı taşır: tek bir SSH bağlantısı ya da terminal penceresi
+      içinde birden fazla kabuk oturumunu aynı anda çalıştırmaya, aralarında
+      geçiş yapmaya ve en önemlisi bu oturumları <strong>bağlantıyı kesmeden
+      arka planda bırakıp</strong> daha sonra kaldığın yerden devam etmeye
+      imkân tanır.
+    </p>
+
+    <h2 id="tarihce">Tarihçe</h2>
+    <p>
+      tmux, OpenBSD projesi için geliştirildi ve ilk olarak 2007'de
+      yayımlandı. GNU Screen'in yıllardır neredeyse tek seçenek olduğu bir
+      alanda, daha sade bir komut yapısı, aktif geliştirme temposu ve
+      OpenBSD kaynaklı BSD lisansıyla hızla tercih edilir hâle geldi.
+      Zamanla eklenen panel bölme, oturum betikleme (<code>tmuxinator</code>
+      gibi araçlarla) ve zengin durum çubuğu özelleştirmesi, projeyi terminal
+      ağırlıklı geliştirici iş akışlarının standart bir parçası yaptı.
+    </p>
+
+    <h2 id="temel-kavramlar">Temel Kavramlar</h2>
+    <table class="wikitable">
+      <tr><th>Kavram</th><th>Açıklama</th></tr>
+      <tr><td>Oturum (session)</td><td>Bağımsız bir çalışma alanı; kapatılmadan arka plana alınabilir (detach).</td></tr>
+      <tr><td>Pencere (window)</td><td>Bir oturum içindeki sekme; tarayıcı sekmesine benzer.</td></tr>
+      <tr><td>Panel (pane)</td><td>Bir pencerenin yatay/dikey olarak bölünmüş alt bölümü.</td></tr>
+      <tr><td>Önek tuşu (prefix)</td><td>Varsayılan <code>Ctrl+b</code>; tüm tmux komutlarından önce basılır.</td></tr>
+    </table>
+    <p>
+      Örneğin <code>Ctrl+b</code> ardından <code>%</code> geçerli paneli
+      dikey olarak ikiye böler; <code>Ctrl+b</code> ardından <code>d</code>
+      ise oturumu kapatmadan arka plana alır (detach). Daha sonra
+      <code>tmux attach</code> ile aynı oturuma, aynı pencere ve panel
+      düzeniyle geri dönülebilir.
+    </p>
+
+    <h2 id="yapilandirma">Yapılandırma</h2>
+    <p>
+      tmux, ayarlarını <code>~/.tmux.conf</code> dosyasından okur. Önek
+      tuşunu değiştirmek ve fare desteğini açmak yaygın ilk özelleştirmelerdendir:
+    </p>
+    <div class="config-block"><span class="c-comment"># ~/.tmux.conf</span>
+<span class="c-key">set</span> -g prefix C-a
+unbind C-b
+bind C-a send-prefix
+
+<span class="c-key">set</span> -g mouse on
+<span class="c-key">set</span> -g history-limit 10000</div>
+
+    <h2 id="ayrica-bakiniz">Ayrıca Bakınız</h2>
+    <ul>
+      <li><a href="kabuk.html">Unix kabuğu</a></li>
+      <li><a href="neovim.html">Neovim</a></li>
+      <li><a href="zsh.html">Zsh</a></li>
+    </ul>
+
+    <h2 id="kaynaklar">Kaynaklar</h2>
+    <ol class="refs">
+      <li>Nicholas Marriott ve tmux katkıcıları, resmi belgeler ve man sayfası.</li>
+      <li>Bu maddenin ilk sürümü XZ Sides Wiki katkıcıları tarafından yazılmıştır.</li>
+    </ol>
+  </article>
+
+  
+    <aside class="infobox">
+      <div class="term-media">
+        <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="glyph">tmux</div>
+        <div><span class="prompt">$</span> <span class="cmd">tmux new -s work</span></div>
+      </div>
+      <table>
+        <tr><th>Tür</th><td>Terminal çoklayıcısı (multiplexer)</td></tr>
+<tr><th>Geliştirici</th><td>Nicholas Marriott</td></tr>
+<tr><th>İlk sürüm</th><td>2007</td></tr>
+<tr><th>Yazıldığı dil</th><td>C</td></tr>
+<tr><th>Lisans</th><td>BSD</td></tr>
+<tr><th>Yapılandırma dosyası</th><td><code>~/.tmux.conf</code></td></tr>
+      </table>
+      <a class="view-more" href="https://github.com/tmux/tmux" target="_blank" rel="noopener">Proje deposuna bak &rarr;</a>
+    </aside>
+    
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Bu içerik XZ Sides Wiki katkıcıları tarafından yazılmıştır. Ticari bir kaynak değildir.</span>
+    <ul>
+      <li><a href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">Kaynak kod</a></li>
+      <li><a href="https://www.youtube.com/@asherbtww" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="about.html">Hakkında</a></li>
+      <li><a href="contact.html">İletişim</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

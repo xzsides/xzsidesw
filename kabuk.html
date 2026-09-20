@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unix kabuğu — Wiki</title>
+<meta name="description" content="Kabukların ne olduğu, tarihçesi ve Bash, Zsh gibi popüler uygulamaları üzerine bir wiki maddesi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/wiki.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
+<header class="site-header">
+  <div class="wrap header-row">
+    <label for="nav-toggle" class="hamburger" aria-label="Menüyü aç/kapat">&#9776;</label>
+    <a href="index.html" class="wordmark">
+      <span class="mark">&gt;_</span>
+      <span class="word">Wiki</span>
+    </a>
+    <ul class="tabs">
+      <li><a href="#top" class="active">Madde</a></li>
+      <li><a href="about.html">Tartışma</a></li>
+    </ul>
+    <div class="header-right">
+      <form class="search-form" role="search" action="search.html" method="get">
+        <input type="search" name="q" list="wiki-pages" placeholder="Wiki'de ara" autocomplete="off">
+        <datalist id="wiki-pages">
+<option value="Ana Sayfa">
+<option value="Unix kabuğu">
+<option value="Bash">
+<option value="Zsh">
+<option value="Starship">
+<option value="Neovim">
+<option value="tmux">
+<option value="Şablonlar">
+<option value="XZ Sides Wiki hakkında">
+<option value="İletişim">
+</datalist>
+        <button type="submit" aria-label="Ara">&#128269;</button>
+      </form>
+      <a class="account" href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">
+        <span class="gh-mark">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+          0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
+          1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+          0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68
+          0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+          0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01
+          8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </span>
+        <span class="account-text">
+          <span class="a-label">Kaynak kod</span>
+          <span class="a-name">xzsides/xzsidesw</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap page">
+  
+    <nav class="docs-nav">
+      <label for="nav-toggle" class="drawer-close" aria-label="Menüyü kapat">&times;</label>
+      <a href="index.html" class="home-link">&#8962; Ana Sayfa</a>
+      
+        <div class="nav-group">
+          <p class="nav-group-title">Genel</p>
+          <ul><li><a href="kabuk.html" class="active">Unix kabuğu</a></li><ul class="subnav"><li><a href="#genel-bakis">Genel Bakış</a></li>
+<li><a href="#tarihce">Tarihçe</a></li>
+<li><a href="#nasil-calisir">Nasıl Çalışır</a></li>
+<li><a href="#kabuk-turleri">Kabuk Türleri</a></li>
+<li><a href="#prompt">Prompt ve Özelleştirme</a></li>
+<li><a href="#ayrica-bakiniz">Ayrıca Bakınız</a></li>
+<li><a href="#kaynaklar">Kaynaklar</a></li></ul></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Kabuklar</p>
+          <ul><li><a href="bash.html" class="">Bash</a></li><li><a href="zsh.html" class="">Zsh</a></li></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Araçlar</p>
+          <ul><li><a href="starship.html" class="">Starship</a></li><li><a href="neovim.html" class="">Neovim</a></li><li><a href="tmux.html" class="">tmux</a></li></ul>
+        </div>
+        
+        <div class="nav-group">
+          <p class="nav-group-title">Proje</p>
+          <ul><li><a href="templates.html" class="">Şablonlar</a></li><li><a href="search.html" class="">Tüm Maddeler</a></li><li><a href="about.html" class="">Wiki hakkında</a></li><li><a href="contact.html" class="">İletişim</a></li></ul>
+        </div>
+        
+      <hr class="nav-divider">
+      <a class="footer-link" href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">Kaynak kod (GitHub)</a>
+    </nav>
+    
+
+  <article class="article" id="top">
+    <p class="subtitle-tag">Kabuk &middot; Unix Araçları &middot; Komut Satırı</p>
+    <h1 class="page-title">Unix kabuğu</h1>
+
+    <p class="lede">
+      <strong>Kabuk</strong> (İng. <em>shell</em>), kullanıcının işletim sistemiyle metin
+      tabanlı komutlar yazarak konuştuğu programdır. Bir kabuk, yazdığın komutu okur,
+      onu anlamlandırır, çalıştırır ve sonucu ekrana geri basar — bu döngüye
+      <strong>REPL</strong> (read–eval–print loop) denir. Linux, macOS ve WSL üzerinde
+      terminali açtığında karşına çıkan <code>$</code> veya <code>%</code> işareti,
+      aslında bir kabuğun seni komut yazmaya davet ettiği yerdir.
+    </p>
+    <p>
+      Bu wiki, kabukları ve onların etrafında şekillenen ekosistemi — <a href="bash.html">Bash</a>,
+      <a href="zsh.html">Zsh</a>, prompt aracı <a href="starship.html">Starship</a>, editör
+      <a href="neovim.html">Neovim</a> ve terminal çoklayıcısı <a href="tmux.html">tmux</a> —
+      konu alan küçük, topluluk tarafından yazılan bir kaynaktır.
+    </p>
+
+    <h2 id="genel-bakis">Genel Bakış</h2>
+    <p>
+      Bir kabuk iki temel görev üstlenir: <strong>etkileşimli kullanım</strong> (komutları
+      tek tek yazıp anında sonuç almak) ve <strong>betik çalıştırma</strong> (bir dosyaya
+      yazılmış komut dizisini sırayla işletmek). İkinci görev kabukları aynı zamanda birer
+      programlama diline dönüştürür; değişkenler, koşullar, döngüler ve fonksiyonlar
+      neredeyse her kabukta bulunur.
+    </p>
+    <p>
+      Kullanıcılar açısından kabuklar birbirinden; sözdizimi ayrıntıları, otomatik
+      tamamlama kalitesi, prompt özelleştirme imkânları ve eklenti ekosistemleriyle ayrışır.
+      Sistem açısından ise fark daha küçüktür: hepsi aynı işletim sistemi çağrılarını
+      (process oluşturma, dosya betikleme, sinyal yönetimi) kullanır.
+    </p>
+
+    <h2 id="tarihce">Tarihçe</h2>
+    <p>
+      İlk kabuk sayılabilecek program, 1971'de Ken Thompson tarafından yazılan
+      <strong>Thompson shell</strong>'dir. 1979'da Stephen Bourne'un yazdığı
+      <strong>Bourne shell (sh)</strong>, betik yazımını standarda kavuşturdu ve
+      sonraki neredeyse tüm kabukların ortak atası oldu. 1989'da GNU projesi için
+      yazılan <a href="bash.html">Bash</a>, Bourne shell'in özgür ve genişletilmiş
+      bir yeniden yazımı olarak ortaya çıktı. 1990'da Paul Falstad'ın geliştirdiği
+      <a href="zsh.html">Zsh</a> ise etkileşimli kullanım kalitesini bir adım öteye
+      taşıdı.
+    </p>
+    <p>
+      2019'da macOS Catalina ile birlikte Apple'ın varsayılan kabuğu Bash'ten Zsh'e
+      geçmesi, Zsh'in daha geniş bir kitleye ulaşmasında önemli bir kırılma noktası oldu.
+    </p>
+
+    <h2 id="nasil-calisir">Nasıl Çalışır</h2>
+    <p>
+      Bir komut yazıp Enter'a bastığında kabuk şu adımları izler: satırı kelimelere
+      ayırır, değişkenleri ve joker karakterleri (<code>*</code>, <code>~</code> gibi)
+      açar, komutun bir kabuk fonksiyonu, yerleşik komut (<code>cd</code>, <code>export</code>)
+      ya da diskteki bir program olup olmadığını <code>$PATH</code> üzerinden arar,
+      ardından yeni bir süreç (process) başlatarak komutu çalıştırır ve çıkış
+      kodunu bekler.
+    </p>
+    <p>
+      Kabuğun okuduğu yapılandırma dosyaları (<code>~/.bashrc</code>, <code>~/.zshrc</code>
+      gibi) her yeni terminal oturumunda çalışır; takma adlar (alias), ortam değişkenleri
+      ve prompt görünümü genellikle burada tanımlanır.
+    </p>
+
+    <h2 id="kabuk-turleri">Kabuk Türleri</h2>
+    <table class="wikitable">
+      <tr><th>Kabuk</th><th>Yaklaşım</th><th>Bu wiki'de</th></tr>
+      <tr><td>Bash</td><td>POSIX uyumlu, en yaygın varsayılan kabuk</td><td><a href="bash.html">madde</a></td></tr>
+      <tr><td>Zsh</td><td>Bash'e üst küme, gelişmiş tamamlama ve eklenti sistemi</td><td><a href="zsh.html">madde</a></td></tr>
+      <tr><td>Fish</td><td>Kutudan çıktığı gibi otomatik öneri ve renklendirme</td><td>—</td></tr>
+      <tr><td>Dash</td><td>Minimal, sadece betik çalıştırmaya odaklı POSIX kabuğu</td><td>—</td></tr>
+    </table>
+
+    <h2 id="prompt">Prompt ve Özelleştirme</h2>
+    <p>
+      Kabuğun kendisi komutu çalıştırırken, ekrandaki prompt'un (istem satırının)
+      görünümü ayrı bir katmandır. Kullanıcılar geleneksel olarak bunu kabuğun kendi
+      söz dizimiyle (<code>PS1</code> değişkeni gibi) tanımlar; ancak
+      <a href="starship.html">Starship</a> gibi kabuktan bağımsız araçlar, aynı
+      yapılandırmayı Bash, Zsh, Fish gibi farklı kabuklar arasında taşınabilir hâle
+      getirir.
+    </p>
+
+    <h2 id="ayrica-bakiniz">Ayrıca Bakınız</h2>
+    <ul>
+      <li><a href="bash.html">Bash</a></li>
+      <li><a href="zsh.html">Zsh</a></li>
+      <li><a href="starship.html">Starship</a></li>
+      <li><a href="neovim.html">Neovim</a></li>
+      <li><a href="tmux.html">tmux</a></li>
+      <li><a href="templates.html">Şablonlar — indirilebilir yapılandırma dosyaları</a></li>
+    </ul>
+
+    <h2 id="kaynaklar">Kaynaklar</h2>
+    <ol class="refs">
+      <li>GNU Project, <em>Bash Reference Manual</em>.</li>
+      <li>Paul Falstad ve Zsh katkıcıları, <em>Zsh Manual</em>, zsh.sourceforge.io.</li>
+      <li>Bu maddenin ilk sürümü XZ Sides Wiki katkıcıları tarafından yazılmıştır.</li>
+    </ol>
+  </article>
+
+  
+    <aside class="infobox">
+      <div class="term-media">
+        <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="glyph">$_</div>
+        <div><span class="prompt">$</span> <span class="cmd">echo $SHELL</span></div>
+<div><div class="out" style="color:#c9d1d9;">/bin/zsh</div></div>
+      </div>
+      <table>
+        <tr><th>Tür</th><td>Komut satırı yorumlayıcısı</td></tr>
+<tr><th>İlk örnek</th><td>Thompson shell, 1971</td></tr>
+<tr><th>Yaygın uygulamalar</th><td>bash, zsh, fish, dash</td></tr>
+<tr><th>Platform</th><td>Unix, Linux, macOS, WSL</td></tr>
+<tr><th>Lisans</th><td>Genellikle açık kaynak</td></tr>
+<tr><th>İlgili wiki maddeleri</th><td><a href="bash.html">Bash</a>, <a href="zsh.html">Zsh</a></td></tr>
+      </table>
+      <a class="view-more" href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">Proje kaynağına bak &rarr;</a>
+    </aside>
+    
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Bu içerik XZ Sides Wiki katkıcıları tarafından yazılmıştır. Ticari bir kaynak değildir.</span>
+    <ul>
+      <li><a href="https://github.com/xzsides/xzsidesw" target="_blank" rel="noopener">Kaynak kod</a></li>
+      <li><a href="https://www.youtube.com/@asherbtww" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="about.html">Hakkında</a></li>
+      <li><a href="contact.html">İletişim</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
